@@ -134,7 +134,7 @@ void stressFunctionLoop()
   while ((millis() - time_since_last_reset) < interval2 && i > Calibration)
   {
     pox.update(); 
-    if (pox.getHeartRate() > avgHR || (Time2 - Time1) > avgHRV)
+    if (pox.getHeartRate() > avgHR || (Time2 - Time1) < avgHRV)
   {
     M5.Lcd.setCursor(0, 105);
     M5.Lcd.print("DEVIATION DETECTED!");
